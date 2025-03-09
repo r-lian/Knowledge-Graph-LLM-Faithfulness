@@ -309,7 +309,10 @@ def main():
         
         # Process a sample of questions
         sample_size = min(5, len(dataset['train']))
+        
+        # Convert NumPy integers to Python integers
         sample_indices = np.random.choice(len(dataset['train']), sample_size, replace=False)
+        sample_indices = [int(idx) for idx in sample_indices]  # Convert to Python int
         
         results = []
         
